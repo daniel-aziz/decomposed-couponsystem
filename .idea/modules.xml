@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Decomposed CouponSystem.iml" filepath="$PROJECT_DIR$/.idea/Decomposed CouponSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configServer/configServer.iml" filepath="$PROJECT_DIR$/configServer/configServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/couponSystem-a/couponSystem.iml" filepath="$PROJECT_DIR$/couponSystem-a/couponSystem.iml" />
+    </modules>
+  </component>
+</project>
