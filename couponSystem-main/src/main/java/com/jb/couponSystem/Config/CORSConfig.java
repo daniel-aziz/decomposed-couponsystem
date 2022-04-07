@@ -10,9 +10,9 @@ import java.util.Collections;
 /**
  * CORS Configuration defines rules that identify the origins that allow to access to the server
  */
-@Configuration
+//@Configuration
 public class CORSConfig {
-    @Bean
+    //@Bean
     public CorsFilter corsFilter(){
 
         // create new url configuration for browsers
@@ -25,7 +25,7 @@ public class CORSConfig {
         config.setAllowCredentials(true);
 
         // allow to get from any ip/domain
-        config.setAllowedOriginPatterns(Collections.singletonList("*"));
+        config.addAllowedOrigin("*");
 
         // allow to get any header
         config.addAllowedHeader("*");

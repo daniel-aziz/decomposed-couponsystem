@@ -63,7 +63,7 @@ public class AdminService extends ClientService {
     public void updateCompany(Company company) throws CouponSystemException {
         if (company != null) {
             if (!companyRepository.existsByIdNotAndEmail(company.getId(), company.getEmail())) {
-                company.setCoupons(companyRepository.getById(company.getId()).getCoupons());
+                company.setCoupons(companyRepository.getOne(company.getId()).getCoupons());
                 companyRepository.saveAndFlush(company);
             } else throw new CouponSystemException(SystemErrMsg.COMPANY_IS_EXIST);
         } else throw new CouponSystemException(SystemErrMsg.EMPTY_VALUES);
@@ -78,7 +78,7 @@ public class AdminService extends ClientService {
     public void deleteCompany(int companyId) throws CouponSystemException {
         if (companyRepository.existsById(companyId)) {
 
-            Company company = companyRepository.getById(companyId);
+            Company company = companyRepository.getOne(companyId);
             for (Coupon item: company.getCoupons()) {
                 couponRepository.deleteAllCouponPurchases(item.getId());
             }
@@ -104,7 +104,7 @@ public class AdminService extends ClientService {
      */
     public Company getOneCompany(int companyId) throws CouponSystemException {
         if (companyRepository.existsById(companyId)) {
-            return companyRepository.getById(companyId);
+            return companyRepository.getOne(companyId);
         } else throw new CouponSystemException(SystemErrMsg.COMPANY_NOT_EXIST);
     }
 
@@ -129,7 +129,7 @@ public class AdminService extends ClientService {
     public void updateCustomer(Customer customer) throws CouponSystemException {
         if (customer != null) {
             if (!customerRepository.existsByIdNotAndEmail(customer.getId(), customer.getEmail())) {
-                customer.setCoupons(companyRepository.getById(customer.getId()).getCoupons());
+                customer.setCoupons(companyRepository.getOne(customer.getId()).getCoupons());
                 customerRepository.saveAndFlush(customer);
             } else throw new CouponSystemException(SystemErrMsg.CUSTOMER_IS_EXIST);
         } else throw new CouponSystemException(SystemErrMsg.EMPTY_VALUES);
@@ -166,7 +166,7 @@ public class AdminService extends ClientService {
      */
     public Customer getOneCustomer(int customerId) throws CouponSystemException {
         if (customerRepository.existsById(customerId)) {
-            return customerRepository.getById(customerId);
+            return customerRepository.getOne(customerId);
         } else throw new CouponSystemException(SystemErrMsg.CUSTOMER_NOT_EXIST);
     }
 

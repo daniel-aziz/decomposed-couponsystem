@@ -54,7 +54,7 @@ public class CustomerService extends ClientService {
      */
     public void purchaseCoupon(int id) throws CouponSystemException {
         if (couponRepository.existsById(id)) {
-            Coupon coupon = couponRepository.getById(id);
+            Coupon coupon = couponRepository.getOne(id);
             if (coupon.getAmount() > 0) {
                 if (coupon.getEndDate().toLocalDate().isAfter(LocalDate.now())) {
                     if (couponRepository.isCouponPurchased(this.getCustomerId(), coupon.getId()).size() < 1) {
@@ -117,7 +117,7 @@ public class CustomerService extends ClientService {
      * @return a customer bean
      */
     public Customer getCustomerDetails() {
-        return customerRepository.getById(this.getCustomerId());
+        return customerRepository.getOne(this.getCustomerId());
     }
 
 

@@ -140,6 +140,6 @@ public class CompanyService extends ClientService {
      * @return a company bean
      */
     public Company getCompanyDetails() {
-        return companyRepository.getById(this.getCompanyId());
+        return companyRepository.getOne(this.getCompanyId());
     }
 }
