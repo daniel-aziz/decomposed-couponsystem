@@ -1,14 +1,7 @@
 ### Decomposed Coupon System Backend
 
-Decomposed the coupon backend api to fit the Microservice architecture
+Decomposed the coupon backend to fit the Microservice architecture
 
-this side handles the logic, DB writing, exposing API points. 
+<a herf="https://github.com/daniel-aziz/couponSystem-backend"> Coupon System Backend</a>
 
-Stack Used: Java, Spring Boot, MySQL, REST API's, Maven
-
-
-## How to use?
-
-
-
-### WORK IN PROGRESS
+<a herf="https://github.com/daniel-aziz/DLCCloudConfig"> Cloud Config </a>
